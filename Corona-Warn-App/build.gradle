@@ -6,7 +6,6 @@ apply plugin: 'androidx.navigation.safeargs.kotlin'
 apply plugin: 'jacoco'
 apply plugin: "org.sonarqube"
 
-
 def environmentExtractor = { File path ->
     def rawJson = path.text
     def escapedJson = rawJson.replace("\"", "\\\"").replace("\n", "").replace("\r", "")
@@ -107,6 +106,7 @@ android {
 
     buildTypes {
         debug {
+            testCoverageEnabled true
         }
         release {
             minifyEnabled true
